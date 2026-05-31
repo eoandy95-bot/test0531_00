@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실시간 동네 날씨 조회</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="weather-container">
+        <h2> An 🌦️ 실시간 동네 날씨</h2>
+        <p class="subtitle">행정구역을 선택하시면 현재 시각 날씨를 조회합니다.</p>
+        
+        <div class="select-group">
+            <select id="step1">
+                <option value="">시/도 선택</option>
+            </select>
+            <select id="step2" disabled>
+                <option value="">시/군/구 선택</option>
+            </select>
+            <select id="step3" disabled>
+                <option value="">읍/면/동 선택</option>
+            </select>
+        </div>
+
+        <button id="searchBtn">날씨 조회하기</button>
+
+        <hr>
+
+        <div id="resultContainer" class="result-container hidden">
+            <div class="location-title">
+                <span id="currentLocation">기본 위치</span>
+                <span id="currentTime" class="time-stamp">--:-- 기준</span>
+            </div>
+            
+            <div class="main-weather">
+                <div class="weather-temp"><span id="txtT1H">--</span>°C</div>
+                <div class="weather-state" id="txtPTY">정보 없음</div>
+            </div>
+
+            <div class="weather-details">
+                <div class="detail-item">
+                    <span class="label">💧 습도</span>
+                    <span class="value" id="txtREH">-- %</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">🌧️ 강수량</span>
+                    <span class="value" id="txtRN1">-- mm</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">💨 풍속</span>
+                    <span class="value" id="txtWSD">-- m/s</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="messageBox" class="message-box hidden"></div>
+    </div>    
+
+    <script src="script.js"></script>
+</body>
+</html>
